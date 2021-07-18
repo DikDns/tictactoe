@@ -2,7 +2,7 @@
 /* Fonts Google */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-/* Default style */
+/* Parent style */
 html {
     /* Fonts */
     font-family: 'Varela Round', Arial, Helvetica, sans-serif;
@@ -13,5 +13,45 @@ html {
     /* Colors */
 
     /* Layouts */
-    
+
+}
+
+
+
+
+
+
+
+
+.main {
+    /* Layouts */
+    background-color: #eee;
+}
+
+.section {
+    /* Layouts */
+    background-color: #777;
+    width: 372px;
+    margin: 16px auto;
+}
+
+.playfield {
+    display: flex;
+    flex-direction: column;
+    width: 372px;
+    height: 372px;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.row-square {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.square {
+    background-color: #bbb;
+    width: 92px;
+    height: 92px;
 }
