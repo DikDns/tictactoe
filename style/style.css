@@ -33,6 +33,7 @@ html {
     background-color: #777;
     width: 372px;
     margin: 16px auto;
+    border-radius: 8px;
 }
 
 .playfield {
@@ -54,4 +55,9 @@ html {
     background-color: #bbb;
     width: 92px;
     height: 92px;
+    transition: 250ms;
+}
+
+.square:hover {
+    background-color: #ddd;
 }
