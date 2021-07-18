@@ -4,5 +4,14 @@
 
 /* Default style */
 html {
+    /* Fonts */
     font-family: 'Varela Round', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+
+    /* Colors */
+
+    /* Layouts */
+    
 }
