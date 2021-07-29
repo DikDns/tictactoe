@@ -38,27 +38,28 @@ gameStatus.innerHTML = currentPlayerTurn();
  */
 function handleCellPlayed() {
     
-}
+};
 
 function handlePlayerChange() {
     
-}
+};
 
 function handleResultValidation() {
     
-}
+};
 
 function handleCellClicked() {
-    
-}
+
+};
 
 function handleRestartGame() {
-    
-}
+
+};
 
 
 
 /**
- * Select the cell and the restart button
+ * Select elements and Add event
  */
-
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClicked));
+document.querySelector('#resetButton').addEventListener('click', handleRestartGame);
