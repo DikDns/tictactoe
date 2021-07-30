@@ -11,7 +11,7 @@ let gameIsActive = true;
 /**
  * Player Variable
  */
-let currentPlayer = 'DikDns';
+let currentPlayer = 'X';
 
 /**
  * To store game state data here
@@ -48,8 +48,22 @@ function handleResultValidation() {
     
 };
 
-function handleCellClicked() {
+function handleCellClicked(clickedCellEvent) {
+    // Select the clicked cell
+    const clickedCell = clickedCellEvent.target;
+    // Select the data-cell-index
+    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
+    // Check if the cell is already clicked or game paused
+    if (gameStatus[clickedCellIndex] !== "" || !gameIsActive) {
+        return;
+    }
+    console.log(clickedCellIndex);
+
+
+    // Continue to the next step function
+    handleCellPlayed(clickedCell, clickedCellIndex);
+    handleResultValidation();
 };
 
 function handleRestartGame() {
