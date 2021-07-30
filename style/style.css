@@ -26,6 +26,7 @@ html {
 .main {
     /* Layouts */
     background-color: #eee;
+    text-align: center;
 }
 
 .section {
@@ -51,6 +52,9 @@ html {
     background-color: #ccc;
     border-radius: 10px;
     cursor: pointer;
+    line-height: 105px;
+    font-size: 70px;
+    color: #fff;
 }
 
 .cell:hover {
