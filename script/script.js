@@ -58,7 +58,9 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 };
 
 function handlePlayerChange() {
-    
+    // Swap the turn using ternary operator awesome!
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    gameStatus.innerHTML = currentPlayerTurn();
 };
 
 function handleResultValidation() {
