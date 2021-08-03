@@ -78,8 +78,6 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
     //* Update the internal state and UI state
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
-
-    console.log(gameState);
 };
 
 function handlePlayerChange() {
