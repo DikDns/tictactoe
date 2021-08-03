@@ -3,20 +3,28 @@
  */
 const gameStatus = document.querySelector('#status');
 
+
+
 /**
  * To check the game progress
  */
 let gameIsActive = true;
+
+
 
 /**
  * Player Variable
  */
 let currentPlayer = 'X';
 
+
+
 /**
  * To store game state data here
  */
 let gameState = ["","","","","","","","",""];
+
+
 
 /**
  * Winning Condition Array
@@ -32,6 +40,8 @@ const winningConditions = [
     [2,4,6]
 ];
 
+
+
 /**
  * Status Messages Functions
  */
@@ -40,10 +50,12 @@ const drawStatus = () => '<div class="status-messages" id="draw"><p>Draw!</p></d
 const currentPlayerTurn = () => '<div class="status-messages" id="current"><p>It\'s ' + currentPlayer + '\'s turn.</p></div>';
 
 
+
 /**
  * Initial Messages
  */
 gameStatus.innerHTML = currentPlayerTurn();
+
 
 
 /**
@@ -132,6 +144,15 @@ function handleRestartGame() {
 
     //* Change the cell condition to normal 
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = '');
+};
+
+
+
+/**
+ * Computer Functions
+ */
+function computerTurn () {
+
 };
 
 
