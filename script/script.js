@@ -151,7 +151,11 @@ function handleRestartGame() {
 /**
  * Computer Functions
  */
-function computerTurn () {
+function handleComputerTurn () {
+
+};
+
+function computer () {
 
 };
 
