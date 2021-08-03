@@ -59,6 +59,19 @@ gameStatus.innerHTML = currentPlayerTurn();
 
 
 /**
+ * Computer Functions
+ */
+function handleComputerTurn () {
+
+};
+
+function computer () {
+
+};
+
+
+
+/**
  * main function list
  */
 function handleCellPlayed(clickedCell, clickedCellIndex) {
@@ -144,19 +157,6 @@ function handleRestartGame() {
 
     //* Change the cell condition to normal 
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = '');
-};
-
-
-
-/**
- * Computer Functions
- */
-function handleComputerTurn () {
-
-};
-
-function computer () {
-
 };
 
 
