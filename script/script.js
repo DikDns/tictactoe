@@ -1,4 +1,18 @@
 /**
+ * Select every cell
+ */
+let cells = document.querySelectorAll('.cell');
+
+
+
+/**
+ * Select Button
+ */
+let resetButton = document.querySelector('#resetButton');
+
+
+
+/**
  * To display the game status
  */
 const gameStatus = document.querySelector('#status');
@@ -62,14 +76,19 @@ gameStatus.innerHTML = currentPlayerTurn();
  * Computer Functions
  */
 function handleComputerTurn () {
-
+    for(let i = 0; i <= 8; i++){
+        
+    }
 };
 
 function computer () {
+    const randomNum = Math.random() * 11;
+
+    handleCellPlayed();
 
 };
 
-
+computer();
 
 /**
  * main function list
@@ -162,5 +181,5 @@ function handleRestartGame() {
 /**
  * Select elements and Add event
  */
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClicked));
-document.querySelector('#resetButton').addEventListener('click', handleRestartGame);
+cells.forEach(cell => cell.addEventListener('click', handleCellClicked));
+resetButton.addEventListener('click', handleRestartGame);
