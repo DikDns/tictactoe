@@ -27,7 +27,7 @@ let gameIsActive = true;
 
 
 /**
- * Player Variable
+ * Important Variable
  */
 let currentPlayer = 'X';
 
@@ -75,20 +75,29 @@ gameStatus.innerHTML = currentPlayerTurn();
 /**
  * Computer Functions
  */
-function handleComputerTurn () {
-    for(let i = 0; i <= 8; i++){
-        
-    }
-};
+// function handleComputerTurn () {
+//     gameIsActive = false;
+//     computer()
+// };
 
-function computer () {
-    const randomNum = Math.random() * 11;
+// function computer () {
+//     const randomNum = parseInt(Math.random() * 9);
 
-    handleCellPlayed();
+//     for (let i = 0; i <= 8; i++){
+//         if (gameState[i] !== ''){
+//             continue;
+//         } else if (i === randomNum){
+//             cells[i].innerHTML = currentPlayer;
+//             gameIsActive = true;
+//             gameStatus.innerHTML = currentPlayerTurn();
+//         } else {
+//             console.log('not worked');
+//         }
+//     }
 
-};
+// };
 
-computer();
+
 
 /**
  * main function list
@@ -173,7 +182,7 @@ function handleRestartGame() {
     gameState = ["","","","","","","","",""];
 
     //* Change the cell condition to normal 
-    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = '');
+    cells.forEach(cell => cell.innerHTML = '');
 };
 
 
