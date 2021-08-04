@@ -75,27 +75,14 @@ gameStatus.innerHTML = currentPlayerTurn();
 /**
  * Computer Functions
  */
-// function handleComputerTurn () {
-//     gameIsActive = false;
-//     computer()
-// };
+function computer () {
+    const randomNum = parseInt(Math.random() * 9);
+};
 
-// function computer () {
-//     const randomNum = parseInt(Math.random() * 9);
-
-//     for (let i = 0; i <= 8; i++){
-//         if (gameState[i] !== ''){
-//             continue;
-//         } else if (i === randomNum){
-//             cells[i].innerHTML = currentPlayer;
-//             gameIsActive = true;
-//             gameStatus.innerHTML = currentPlayerTurn();
-//         } else {
-//             console.log('not worked');
-//         }
-//     }
-
-// };
+function handleComputerTurn () {
+    gameIsActive = false;
+    computer()
+};
 
 
 
@@ -154,7 +141,8 @@ function handleResultValidation() {
     }
 
     //* Change Turn
-    handlePlayerChange();
+    // handlePlayerChange();
+    handleComputerTurn();
 };
 
 function handleCellClicked(clickedCellEvent) {
