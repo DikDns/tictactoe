@@ -77,11 +77,58 @@ gameStatus.innerHTML = currentPlayerTurn();
  */
 function computer () {
     const randomNum = parseInt(Math.random() * 9);
+    let emptyIndexCells = [];
+    //* Looping to get the index of the empty cells
+    for (let i = 0; i < gameState.length; i++) {
+        if (gameState[i] !== '') {
+            continue;
+        } else {
+            emptyIndexCells.push(cells[i].getAttribute('data-cell-index'));
+        }
+    }
+
+    console.log(emptyIndexCells);
+    
+    let computerChoose;
+    //* Looping to randomize the computer choice
+    for (let i = 0; i < emptyIndexCells.length ; i++) {
+        if (randomNum == 0 && i == 0){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 1 && i == 1){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 2 && i == 2){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 3 && i == 3){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 4 && i == 4){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 5 && i == 5){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 6 && i == 6){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 7 && i == 7){
+            computerChoose = emptyIndexCells[i];
+            break;
+        } else if (randomNum == 8 && i == 8){
+            computerChoose = emptyIndexCells[i];
+            break;
+        }
+    }
+    console.log(computerChoose);
+    console.log(cells[computerChoose]);
+    handleCellClicked(cells[computerChoose]);
 };
 
 function handleComputerTurn () {
-    gameIsActive = false;
     computer()
+    gameIsActive = false;
 };
 
 
@@ -141,13 +188,13 @@ function handleResultValidation() {
     }
 
     //* Change Turn
-    // handlePlayerChange();
+    //handlePlayerChange();
     handleComputerTurn();
 };
 
 function handleCellClicked(clickedCellEvent) {
     //* Select the clicked cell
-    const clickedCell = clickedCellEvent.target;
+    const clickedCell = clickedCellEvent.target || clickedCellEvent;
     //* Select the data-cell-index
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
