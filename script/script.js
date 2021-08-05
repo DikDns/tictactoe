@@ -30,6 +30,7 @@ let gameIsActive = true;
  * Important Variable
  */
 let currentPlayer = 'X';
+let computerTurn = false;
 
 
 
@@ -93,7 +94,7 @@ function computer () {
     const randomNum = parseInt(Math.random() * emptyIndexCells.length);
     let computerChoose;
 
-    console.log('random num: ' + randomNum);
+    console.log('comp pick index num: ' + randomNum);
 
     //* Looping to match the randomNum and the emptyIndexCells index
     for (let i = 0; i < emptyIndexCells.length ; i++) {
@@ -126,13 +127,15 @@ function computer () {
             break;
         }
     }
-    console.log("comp pick = " + computerChoose);
+    console.log("comp pick cell " + computerChoose);
     console.log(cells[computerChoose]);
     handleCellClicked(cells[computerChoose]);
 };
 
 function handleComputerTurn () {
-    computer();
+    if (computerTurn){
+        computer();
+    }
 };
 
 
@@ -149,6 +152,7 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 function handlePlayerChange() {
     //* Swap the turn using ternary operator awesome!
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    computerTurn = computerTurn === false ? true : false;
     gameStatus.innerHTML = currentPlayerTurn();
 };
 
