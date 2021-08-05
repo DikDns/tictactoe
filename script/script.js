@@ -76,59 +76,63 @@ gameStatus.innerHTML = currentPlayerTurn();
  * Computer Functions
  */
 function computer () {
-    const randomNum = parseInt(Math.random() * 9);
     let emptyIndexCells = [];
-    //* Looping to get the index of the empty cells
+    //* Looping to insert the index of the empty cells
     for (let i = 0; i < gameState.length; i++) {
         if (gameState[i] !== '') {
+            //* Skip the already inserted cell to the next iteration 
             continue;
         } else {
+            //* Insert the empty cell to the new variable
             emptyIndexCells.push(cells[i].getAttribute('data-cell-index'));
         }
-    }
-
-    console.log(emptyIndexCells);
+    } 
+    console.log(emptyIndexCells)
     
+    //! Generate appropriate random numbers between 0 and emptyIndexCells length
+    const randomNum = parseInt(Math.random() * emptyIndexCells.length);
     let computerChoose;
+
+    console.log('random num: ' + randomNum);
+
     //* Looping to randomize the computer choice
     for (let i = 0; i < emptyIndexCells.length ; i++) {
-        if (randomNum == 0 && i == 0){
+        if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 1 && i == 1){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 2 && i == 2){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 3 && i == 3){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 4 && i == 4){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 5 && i == 5){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 6 && i == 6){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 7 && i == 7){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
-        } else if (randomNum == 8 && i == 8){
+        } else if (i === randomNum){
             computerChoose = emptyIndexCells[i];
             break;
         }
     }
-    console.log(computerChoose);
+    console.log("comp pick = " + computerChoose);
     console.log(cells[computerChoose]);
     handleCellClicked(cells[computerChoose]);
 };
 
 function handleComputerTurn () {
-    computer()
-    gameIsActive = false;
+    computer();
 };
 
 
@@ -188,7 +192,7 @@ function handleResultValidation() {
     }
 
     //* Change Turn
-    //handlePlayerChange();
+    handlePlayerChange();
     handleComputerTurn();
 };
 
