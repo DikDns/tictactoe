@@ -135,6 +135,8 @@ function computer () {
 function handleComputerTurn () {
     if (computerTurn){
         computer();
+        computerTurn = false;
+        console.log(computerTurn);
     }
 };
 
@@ -152,8 +154,10 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 function handlePlayerChange() {
     //* Swap the turn using ternary operator awesome!
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    computerTurn = computerTurn === false ? true : false;
+    computerTurn = computerTurn === true ? false : true;
     gameStatus.innerHTML = currentPlayerTurn();
+    console.log(computerTurn);
+    setTimeout(handleComputerTurn(), '1000');
 };
 
 function handleResultValidation() {
@@ -197,7 +201,6 @@ function handleResultValidation() {
 
     //* Change Turn
     handlePlayerChange();
-    handleComputerTurn();
 };
 
 function handleCellClicked(clickedCellEvent) {
