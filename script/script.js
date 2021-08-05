@@ -95,7 +95,7 @@ function computer () {
 
     console.log('random num: ' + randomNum);
 
-    //* Looping to randomize the computer choice
+    //* Looping to match the randomNum and the emptyIndexCells index
     for (let i = 0; i < emptyIndexCells.length ; i++) {
         if (i === randomNum){
             computerChoose = emptyIndexCells[i];
